@@ -29,8 +29,9 @@ void reverseArray(int arr[], int size){
   size_t left = 0;
 
   while(left > right){
-    
-    int aux = arr[left];
+
+    int aux  = 0;
+    aux = arr[left];
     arr[left] = arr[right];
     arr[right] = arr[left];
 
