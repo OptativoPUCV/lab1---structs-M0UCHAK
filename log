@@ -425,3 +425,21 @@ In function ‘strncpy’,
 cc1: all warnings being treated as errors
 Compilation failed
 06416d6
+Sat 12 Aug 2023 08:57:15 PM UTC: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:30:7: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+   30 |   int aux = 0;
+      |       ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:56:8: error: ‘newSize’ redeclared as different kind of symbol
+   56 |   int *newSize = 0;
+      |        ^~~~~~~
+exercises.c:54:50: note: previous definition of ‘newSize’ with type ‘int *’
+   54 | int *filterEvenNumbers(int arr[], int size, int *newSize){
+      |                                             ~~~~~^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+85bdc70
