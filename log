@@ -39,3 +39,18 @@ exercises.c:53:50: note: previous definition of ‘newSize’ with type ‘int *
 cc1: all warnings being treated as errors
 Compilation failed
 848771a
+Sat 12 Aug 2023 08:43:08 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:33:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+   33 |     int aux = arr[left];
+      |         ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:55:7: error: expected identifier or ‘(’ before ‘&’ token
+   55 |   int &newSize = 0;
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+a5fcf27
