@@ -17,7 +17,7 @@ int findMax(const int arr[], int size){
   }
   return elementoMayor; //return 0 
 }
-//////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 Ejercicio 2: Invertir un Arreglo
 Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
@@ -38,7 +38,7 @@ void reverseArray(int arr[], int size){
     right--;
   } 
 }
-//////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 Ejercicio 3: Filtrar Números Pares
 Descripción: Escribe una función que tome un arreglo de enteros
@@ -59,7 +59,7 @@ int *filterEvenNumbers(int arr[], int size, int *newSize){
   }
   return newSize;; 
 }
-//////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 Ejercicio 4: Fusión de dos Arreglos Ordenados
 Descripción: Escribe una función que tome dos arreglos
@@ -158,7 +158,6 @@ debe apuntar a NULL. La función debe devolver un puntero al primer nodo de la
 lista enlazada.
 Recuerda reservar memoria dinámica para cada nodo usando malloc.
 */
-
 
 typedef struct nodo {
   int numero;
