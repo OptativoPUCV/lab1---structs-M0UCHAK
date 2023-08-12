@@ -1,1 +1,23 @@
 
+Sat 12 Aug 2023 08:40:17 PM UTC: 
+ exercises.c | 104 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 96 insertions(+), 8 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:33:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+   33 |     int aux = arr[left];
+      |         ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:55:8: error: ‘newSize’ redeclared as different kind of symbol
+   55 |   int *newSize = 0;
+      |        ^~~~~~~
+exercises.c:53:50: note: previous definition of ‘newSize’ with type ‘int *’
+   53 | int *filterEvenNumbers(int arr[], int size, int *newSize){
+      |                                             ~~~~~^~~~~~~
+test.c: In function ‘test_findMax’:
+test.c:91:18: error: implicit declaration of function ‘findMax’ [-Werror=implicit-function-declaration]
+   91 |     int result = findMax(arr, size);
+      |                  ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e67cebf
