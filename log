@@ -93,3 +93,24 @@ exercises.c:53:50: note: previous definition of ‘newSize’ with type ‘int *
 cc1: all warnings being treated as errors
 Compilation failed
 4c689be
+Sat 12 Aug 2023 08:44:38 PM UTC: 
+ exercises.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:34:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+   34 |     int aux = arr[left];
+      |         ^~~
+exercises.c:30:7: error: unused variable ‘aux’ [-Werror=unused-variable]
+   30 |   int aux = 0;
+      |       ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:56:8: error: ‘newSize’ redeclared as different kind of symbol
+   56 |   int *newSize = 0;
+      |        ^~~~~~~
+exercises.c:54:50: note: previous definition of ‘newSize’ with type ‘int *’
+   54 | int *filterEvenNumbers(int arr[], int size, int *newSize){
+      |                                             ~~~~~^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7806ca1
