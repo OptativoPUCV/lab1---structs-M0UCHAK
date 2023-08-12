@@ -503,3 +503,26 @@ In function ‘strncpy’,
 cc1: all warnings being treated as errors
 Compilation failed
 2dd1191
+Sat 12 Aug 2023 08:58:44 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:30:7: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+   30 |   int aux = 0;
+      |       ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:56:7: error: expected identifier or ‘(’ before ‘&’ token
+   56 |   int &nuevaSize = 0;
+      |       ^
+exercises.c:59:23: error: ‘nuevaSize’ undeclared (first use in this function); did you mean ‘newSize’?
+   59 |     if(esPar(arr[i])) nuevaSize++;
+      |                       ^~~~~~~~~
+      |                       newSize
+exercises.c:59:23: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:62:1: error: control reaches end of non-void function [-Werror=return-type]
+   62 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+d4345c0
