@@ -260,3 +260,61 @@ test.c:370:20: error: request for member ‘siguiente’ in something not a stru
 cc1: all warnings being treated as errors
 Compilation failed
 d00f7cd
+Sat 12 Aug 2023 08:49:55 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:30:7: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+   30 |   int aux = 0;
+      |       ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:56:7: error: expected identifier or ‘(’ before ‘&’ token
+   56 |   int &newSize = 0;
+      |       ^
+test.c: At top level:
+test.c:37:24: error: unknown type name ‘Nodo’
+   37 | void print_linked_list(Nodo* lista) {
+      |                        ^~~~
+test.c: In function ‘test_crearListaEnlazada’:
+test.c:331:5: error: unknown type name ‘Nodo’
+  331 |     Nodo* lista = crearListaEnlazada(arr, size);
+      |     ^~~~
+test.c:331:19: error: implicit declaration of function ‘crearListaEnlazada’; did you mean ‘test_crearListaEnlazada’? [-Werror=implicit-function-declaration]
+  331 |     Nodo* lista = crearListaEnlazada(arr, size);
+      |                   ^~~~~~~~~~~~~~~~~~
+      |                   test_crearListaEnlazada
+test.c:331:19: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+test.c:333:5: error: unknown type name ‘Nodo’
+  333 |     Nodo* current = lista;
+      |     ^~~~
+test.c:336:37: error: request for member ‘numero’ in something not a structure or union
+  336 |       if (current == NULL || current->numero != arr[i]) {
+      |                                     ^~
+test.c:339:9: error: implicit declaration of function ‘print_linked_list’ [-Werror=implicit-function-declaration]
+  339 |         print_linked_list(lista);
+      |         ^~~~~~~~~~~~~~~~~
+test.c:343:11: error: unknown type name ‘Nodo’
+  343 |           Nodo* temp = lista;
+      |           ^~~~
+test.c:344:24: error: request for member ‘siguiente’ in something not a structure or union
+  344 |           lista = lista->siguiente;
+      |                        ^~
+test.c:349:24: error: request for member ‘siguiente’ in something not a structure or union
+  349 |       current = current->siguiente;
+      |                        ^~
+test.c:360:9: error: unknown type name ‘Nodo’
+  360 |         Nodo* temp = lista;
+      |         ^~~~
+test.c:361:22: error: request for member ‘siguiente’ in something not a structure or union
+  361 |         lista = lista->siguiente;
+      |                      ^~
+test.c:369:7: error: unknown type name ‘Nodo’
+  369 |       Nodo* temp = lista;
+      |       ^~~~
+test.c:370:20: error: request for member ‘siguiente’ in something not a structure or union
+  370 |       lista = lista->siguiente;
+      |                    ^~
+cc1: all warnings being treated as errors
+Compilation failed
+1764ec7
