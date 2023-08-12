@@ -53,7 +53,7 @@ int esPar(int numero){
 
 int *filterEvenNumbers(int arr[], int size, int *newSize){ 
 
-  int nuevaSize = 0;
+  int *nuevaSize = 0;
 
   for(size_t i = 0; i < size; i++){
     if(esPar(arr[i])) nuevaSize++;
