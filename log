@@ -21,3 +21,21 @@ test.c:91:18: error: implicit declaration of function ‘findMax’ [-Werror=imp
 cc1: all warnings being treated as errors
 Compilation failed
 e67cebf
+Sat 12 Aug 2023 08:41:26 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:33:9: error: unused variable ‘aux’ [-Werror=unused-variable]
+   33 |     int aux = arr[left];
+      |         ^~~
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:55:8: error: ‘newSize’ redeclared as different kind of symbol
+   55 |   int *newSize = 0;
+      |        ^~~~~~~
+exercises.c:53:50: note: previous definition of ‘newSize’ with type ‘int *’
+   53 | int *filterEvenNumbers(int arr[], int size, int *newSize){
+      |                                             ~~~~~^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+848771a
