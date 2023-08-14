@@ -52,7 +52,7 @@ int *filterEvenNumbers(int arr[], int size, int *newSize) {
 
   for (size_t i = 0; i < size; i++) {
     if (esPar(arr[i])){
-      filteredArray = (int *)realloc(filteredArray, (newSize + 1));
+      filteredArray = (int *)realloc(filteredArray, (*newSize + 1));
       if (filteredArray == NULL){
         exit(EXIT_FAILURE);
       }
