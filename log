@@ -881,3 +881,14 @@ Mon 14 Aug 2023 03:13:22 PM UTC:
  tests:  0|2
 total_score: 50/70
 5a516cb
+Mon 14 Aug 2023 03:14:45 PM UTC: 
+ exercises.c | 15 ++++++---------
+ 1 file changed, 6 insertions(+), 9 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:30:7: error: variable ‘temp’ set but not used [-Werror=unused-but-set-variable]
+   30 |   int temp;
+      |       ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a709b02
