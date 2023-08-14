@@ -47,14 +47,20 @@ los números pares del arreglo original.
 int esPar(int numero) { return numero % 2 == 0; }
 
 int *filterEvenNumbers(int arr[], int size, int *newSize) {
-
+  int *filteredArray = NULL;
   (*newSize) = 0;
 
   for (size_t i = 0; i < size; i++) {
-    if (esPar(arr[i]))
+    if (esPar(arr[i])){
+      filteredArray = (int *)realloc(filteredArray, (newSize + 1));
+      if (filteredArray == NULL){
+        exit(EXIT_FAILURE);
+      }
+      filteredArray[(*newSize)] = arr[i];
       newSize++;
+    }
   }
-  return newSize;
+  return filteredArray;
   ;
 }
 

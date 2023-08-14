@@ -898,3 +898,21 @@ Mon 14 Aug 2023 03:14:57 PM UTC:
  tests:  0|1
 total_score: 60/70
 03e7367
+Mon 14 Aug 2023 03:17:06 PM UTC: 
+ exercises.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘filterEvenNumbers’:
+exercises.c:55:62: error: passing argument 2 of ‘realloc’ makes integer from pointer without a cast [-Werror=int-conversion]
+   55 |       filteredArray = (int *)realloc(filteredArray, (newSize + 1));
+      |                                                     ~~~~~~~~~^~~~
+      |                                                              |
+      |                                                              int *
+In file included from exercises.c:4,
+                 from test.c:1:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:551:43: note: expected ‘size_t’ {aka ‘long unsigned int’} but argument is of type ‘int *’
+  551 | extern void *realloc (void *__ptr, size_t __size)
+      |                                    ~~~~~~~^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9b6204a
