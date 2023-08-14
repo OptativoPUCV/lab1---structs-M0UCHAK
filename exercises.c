@@ -9,13 +9,14 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int findMax(const int arr[], int size){ 
-  
+int findMax(const int arr[], int size) {
+
   int elementoMayor = arr[0];
-  for(size_t i = 1; i < size; i++){
-    if(arr[i] > elementoMayor) elementoMayor = arr[i];
+  for (size_t i = 1; i < size; i++) {
+    if (arr[i] > elementoMayor)
+      elementoMayor = arr[i];
   }
-  return elementoMayor; //return 0 
+  return elementoMayor; // return 0
 }
 
 /*
@@ -23,20 +24,20 @@ Ejercicio 2: Invertir un Arreglo
 Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
-void reverseArray(int arr[], int size){
+void reverseArray(int arr[], int size) {
 
   size_t right = size - 1;
   size_t left = 0;
 
-  while(left > right){
+  while (left > right) {
 
-    //aux = arr[left];
+    // aux = arr[left];
     arr[left] = arr[right];
     arr[right] = arr[left];
 
     left++;
     right--;
-  } 
+  }
 }
 
 /*
@@ -46,18 +47,18 @@ y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
 */
 
-int esPar(int numero){
-  return numero % 2 == 0;
-}
+int esPar(int numero) { return numero % 2 == 0; }
 
-int *filterEvenNumbers(int arr[], int size, int *newSize){ 
+int *filterEvenNumbers(int arr[], int size, int *newSize) {
 
   (*newSize) = 0;
 
-  for(size_t i = 0; i < size; i++){
-    if(esPar(arr[i])) newSize++;
+  for (size_t i = 0; i < size; i++) {
+    if (esPar(arr[i]))
+      newSize++;
   }
-  return newSize;; 
+  return newSize;
+  ;
 }
 
 /*
@@ -66,34 +67,34 @@ Descripción: Escribe una función que tome dos arreglos
 ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
-void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,int result[]){
+void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
+                       int result[]) {
 
   size_t i = 0, r = 0, k = 0;
-  
-  while((i < size1) && (r < size2)){
-    
-    if(arr1[i] <= arr2[r]){
+
+  while ((i < size1) && (r < size2)) {
+
+    if (arr1[i] <= arr2[r]) {
       result[k] = arr1[i];
       i++;
-    } 
-    else{  
+    } else {
       result[k] = arr2[r];
-      r++; 
+      r++;
     }
     k++;
   }
 
   while (i < size1) {
-        result[k] = arr1[i];
-        i++;
-        k++;
+    result[k] = arr1[i];
+    i++;
+    k++;
   }
 
-  while (r < size2){
-        result[k] = arr2[r];
-        r++;
-        k++;
-  }  
+  while (r < size2) {
+    result[k] = arr2[r];
+    r++;
+    k++;
+  }
 }
 
 /*
@@ -102,21 +103,25 @@ Descripción: Escribe una función que tome un arreglo y su tamaño,
 y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
   0 si no está ordenado, y -1 si está ordenado en orden descendente.
 */
-int checkSorted(int arr[], int size){ 
-  
+int checkSorted(int arr[], int size) {
+
   int orden = 0;
-    
-    for (size_t i = 1; i < size; i++){
-        if (arr[i] > arr[i - 1]){
-            if (orden == 0) orden = 1;
-            else if (orden == -1) return 0;
-            
-        } else if (arr[i] < arr[i - 1]){
-            if (orden == 0) orden = -1;
-            else if (orden == 1) return 0;
-        }
+
+  for (size_t i = 1; i < size; i++) {
+    if (arr[i] > arr[i - 1]) {
+      if (orden == 0)
+        orden = 1;
+      else if (orden == -1)
+        return 0;
+
+    } else if (arr[i] < arr[i - 1]) {
+      if (orden == 0)
+        orden = -1;
+      else if (orden == 1)
+        return 0;
     }
-    return orden;
+  }
+  return orden;
 }
 
 /*
@@ -139,13 +144,13 @@ typedef struct {
 } Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion){
-  
-  strcpy(libro -> titulo, titulo, sizeof(libro -> titulo));
-  strcpy(libro -> autor.nombre, nombreAutor, sizeof(libro -> autor.nombre));
+                      int anioNacimiento, int anioPublicacion) {
 
-  libro -> autor.anioNacimiento = anioNacimiento;
-  libro -> anioPublicacion = anioPublicacion;
+  strcpy(libro->titulo, titulo);
+  strcpy(libro->autor.nombre, nombreAutor);
+
+  libro->autor.anioNacimiento = anioNacimiento;
+  libro->anioPublicacion = anioPublicacion;
 }
 
 /*
@@ -164,27 +169,27 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size){ 
+Nodo *crearListaEnlazada(int arr[], int size) {
 
   Nodo *primero = NULL;
   Nodo *ultimo = NULL;
 
-  for (int i = 0; i < size; i++){
-    
-    Nodo *nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
-    if (nuevoNodo == NULL) exit(EXIT_FAILURE);
+  for (int i = 0; i < size; i++) {
 
-    nuevoNodo -> numero = arr[i];
-    nuevoNodo -> siguiente = NULL;
+    Nodo *nuevoNodo = (Nodo *)malloc(sizeof(Nodo));
+    if (nuevoNodo == NULL)
+      exit(EXIT_FAILURE);
 
-    if (ultimo == NULL){
+    nuevoNodo->numero = arr[i];
+    nuevoNodo->siguiente = NULL;
+
+    if (ultimo == NULL) {
       primero = nuevoNodo;
       ultimo = nuevoNodo;
-    } 
-    else{
-      ultimo -> siguiente = nuevoNodo;
+    } else {
+      ultimo->siguiente = nuevoNodo;
       ultimo = nuevoNodo;
     }
   }
-  return primero; 
+  return primero;
 }

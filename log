@@ -869,3 +869,9 @@ In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163
       | ^~~~~
 Compilation failed
 00bb714
+Mon 14 Aug 2023 03:12:02 PM UTC: 
+ exercises.c | 41 +++++++++++++++++++++++------------------
+ 1 file changed, 23 insertions(+), 18 deletions(-)
+ tests:  0|2
+total_score: 50/70
+deb7ae4
