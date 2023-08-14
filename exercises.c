@@ -46,18 +46,26 @@ los números pares del arreglo original.
 
 int esPar(int numero) { return numero % 2 == 0; }
 
+int contarPares(int arr[], int size){
+  int i, contador = 0;
+  for (i = 0; i < size; i++){
+    if (esPar(arr[i])) contador++;
+  }
+  return contador;
+}
+
 int *filterEvenNumbers(int arr[], int size, int *newSize) {
   int *filteredArray = NULL;
-  (*newSize) = 0;
-
-  for (size_t i = 0; i < size; i++) {
+  (*newSize) = contarPares(arr, size);
+  filteredArray = (int *)malloc(sizeof(int) * (*newSize));
+  if (filteredArray == NULL){
+    exit(EXIT_FAILURE);
+  }
+  for (size_t i = 0, j = 0; i < size; i++) {
     if (esPar(arr[i])){
-      filteredArray = (int *)realloc(filteredArray, ((*newSize) + 1));
-      if (filteredArray == NULL){
-        exit(EXIT_FAILURE);
-      }
-      filteredArray[(*newSize)] = arr[i];
-      newSize++;
+      
+      filteredArray[j] = arr[i];
+      j++;
     }
   }
   return filteredArray;
