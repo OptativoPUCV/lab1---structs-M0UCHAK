@@ -892,3 +892,9 @@ exercises.c:30:7: error: variable ‘temp’ set but not used [-Werror=unused-bu
 cc1: all warnings being treated as errors
 Compilation failed
 a709b02
+Mon 14 Aug 2023 03:14:57 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|1
+total_score: 60/70
+03e7367
