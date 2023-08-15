@@ -934,3 +934,35 @@ Mon 14 Aug 2023 03:20:33 PM UTC:
  tests:  0|0
 total_score: 70/70
 bc6b9c3
+Tue 15 Aug 2023 09:27:28 PM UTC: 
+ exercises.c | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+In file included from test.c:1:
+exercises.c: In function ‘main’:
+exercises.c:216:5: error: unknown type name ‘Lista’
+  216 |     Lista lista;
+      |     ^~~~~
+exercises.c:217:5: error: implicit declaration of function ‘inicializarLista’; did you mean ‘inicializarLibro’? [-Werror=implicit-function-declaration]
+  217 |     inicializarLista(&lista);
+      |     ^~~~~~~~~~~~~~~~
+      |     inicializarLibro
+exercises.c:219:5: error: implicit declaration of function ‘insertar’ [-Werror=implicit-function-declaration]
+  219 |     insertar(&lista, 1);
+      |     ^~~~~~~~
+exercises.c:226:20: error: implicit declaration of function ‘first’ [-Werror=implicit-function-declaration]
+  226 |     int elemento = first(&lista);
+      |                    ^~~~~
+exercises.c:229:20: error: implicit declaration of function ‘next’ [-Werror=implicit-function-declaration]
+  229 |         elemento = next(&lista);
+      |                    ^~~~
+test.c: At top level:
+test.c:382:5: error: redefinition of ‘main’
+  382 | int main(int argc, char *argv[]) {
+      |     ^~~~
+In file included from test.c:1:
+exercises.c:215:5: note: previous definition of ‘main’ with type ‘int()’
+  215 | int main() {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3eba35d

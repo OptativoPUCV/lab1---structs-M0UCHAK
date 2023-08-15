@@ -204,3 +204,30 @@ Nodo *crearListaEnlazada(int arr[], int size) {
   }
   return primero;
 }
+
+
+
+
+
+
+
+
+int main() {
+    Lista lista;
+    inicializarLista(&lista);
+
+    insertar(&lista, 1);
+    insertar(&lista, 2);
+    insertar(&lista, 5);
+    insertar(&lista, 8);
+    insertar(&lista, 10);
+    insertar(&lista, 87);
+
+    int elemento = first(&lista);
+    while (elemento != -1) {
+        printf("%d ", elemento);
+        elemento = next(&lista);
+    }
+
+    return 0;
+}
