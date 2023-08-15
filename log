@@ -966,3 +966,9 @@ exercises.c:215:5: note: previous definition of ‘main’ with type ‘int()’
 cc1: all warnings being treated as errors
 Compilation failed
 3eba35d
+Tue 15 Aug 2023 09:27:47 PM UTC: 
+ exercises.c | 27 ---------------------------
+ 1 file changed, 27 deletions(-)
+ tests:  0|0
+total_score: 70/70
+e8f596c
